@@ -3,8 +3,12 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   def create
-      Post.create(post_params)
-      redirect_to new_post_path
+      @post = Post.new(post_params)
+      if @post.save
+        redirect_to new_post_path, notice: "投稿しました！"
+      else
+        render :new
+      end
   end
   def index
     @posts = Post.all
