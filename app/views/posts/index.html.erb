@@ -1,0 +1,10 @@
+<h1>Tweet一覧</h1>
+<div class = "tweet_content">
+  <h2>内容</h2>
+  <div class = "tweet_post">
+    <% @posts.each do |post| %>
+      <p><%= post.content %></p>
+    <% end %>
+  </div>
+</div>
+<%= link_to '新しく投稿する', new_post_path %>
