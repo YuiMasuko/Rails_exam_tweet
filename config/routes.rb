@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :posts do
-    collection do
-      post :confirm
-    end
+    post :confirm, on: :collection
+    post :confirm, on: :member
   end
 end
